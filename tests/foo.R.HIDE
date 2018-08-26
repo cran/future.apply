@@ -1,7 +1,0 @@
-library("future.apply")
-plan(sequential)
-
-options(future.debug = TRUE)
-
-z <- future_lapply(X = 1, FUN = function(x) y,
-                   future.globals = list(y = 4))
