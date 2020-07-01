@@ -216,7 +216,7 @@ y &lt;- lapply(x, FUN = quantile, probs = 1:3/4)
 <p>one can do:</p>
 
 <pre><code class="r">library(&quot;future.apply&quot;)
-plan(multiprocess) ## Run in parallel on local computer
+plan(multisession) ## Run in parallel on local computer
 
 library(&quot;stats&quot;)
 x &lt;- 1:10
@@ -227,7 +227,7 @@ y &lt;- future_lapply(x, FUN = quantile, probs = 1:3/4)
 
 <h2>Role</h2>
 
-<p>Where does the <a href="https://cran.r-project.org/package=future.apply">future.apply</a> package fit in the software stack?  You can think of it as a sibling to <a href="https://cran.r-project.org/package=foreach">foreach</a>, <a href="https://bioconductor.org/packages/BiocParallel/">BiocParallel</a>, <a href="https://cran.r-project.org/package=plyr">plyr</a>, etc.  Just as parallel provides <code>parLapply()</code>, foreach provides <code>foreach()</code>, BiocParallel provides <code>bplapply()</code>, and plyr provides <code>llply()</code>, future.apply provides <code>future_lapply()</code>.  Below is a table summarizing this idea:</p>
+<p>Where does the <a href="https://cran.r-project.org/package=future.apply">future.apply</a> package fit in the software stack?  You can think of it as a sibling to <a href="https://cran.r-project.org/package=foreach">foreach</a>, <a href="https://cran.r-project.org/package=furrr">furrr</a>, <a href="https://bioconductor.org/packages/BiocParallel/">BiocParallel</a>, <a href="https://cran.r-project.org/package=plyr">plyr</a>, etc.  Just as parallel provides <code>parLapply()</code>, foreach provides <code>foreach()</code>, BiocParallel provides <code>bplapply()</code>, and plyr provides <code>llply()</code>, future.apply provides <code>future_lapply()</code>.  Below is a table summarizing this idea:</p>
 
 <table>
 <tr>
@@ -286,6 +286,22 @@ Built-in and conditional on operating system</a>
 </td>
 <td>
 All future backends via <a href="https://cran.r-project.org/package=doFuture">doFuture</a>
+</td>
+</tr>
+
+<tr style="vertical-align: top">
+<td>
+<a href="https://cran.r-project.org/package=furrr">furrr</a>
+</td>
+<td>
+<code>future_imap()</code>,
+<code>future_map()</code>,
+<code>future_pmap()</code>,
+<code>future_map2()</code>,
+&hellip;
+</td>
+<td>
+All future backends
 </td>
 </tr>
 
