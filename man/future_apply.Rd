@@ -10,6 +10,7 @@ future_apply(
   FUN,
   ...,
   simplify = TRUE,
+  future.envir = parent.frame(),
   future.stdout = TRUE,
   future.conditions = "condition",
   future.globals = TRUE,
@@ -34,6 +35,9 @@ dimension names.}
 
 \item{simplify}{a logical indicating whether results should be simplified
 if possible.}
+
+\item{future.envir}{An \link{environment} passed as argument \code{envir} to
+\code{\link[future:future]{future::future()}} as-is.}
 
 \item{future.stdout}{If \code{TRUE} (default), then the standard output of the
 underlying futures is captured, and re-outputted as soon as possible.
@@ -80,7 +84,7 @@ same as \code{future.label = "future_lapply-\%d"}.  If FALSE, no labels
 are assigned.}
 
 \item{\ldots}{(optional) Additional arguments passed to \code{FUN()}, except
-\verb{future.*} arguments, which are passed on to \code{future_lapply()} used
+\verb{future.*} arguments, which are passed on to \code{\link[=future_lapply]{future_lapply()}} used
 internally.}
 }
 \value{
