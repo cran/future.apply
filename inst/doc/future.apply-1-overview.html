@@ -203,46 +203,36 @@ hr {
 
 <body>
 <h1>A Future for R: Apply Function to Elements in Parallel</h1>
-
 <h2>Introduction</h2>
-
-<p>The purpose of this package is to provide worry-free parallel alternatives to base-R &ldquo;apply&rdquo; functions, e.g. <code>apply()</code>, <code>lapply()</code>, and <code>vapply()</code>.  The goal is that one should be able to replace any of these in the core with its futurized equivalent and things will just work.  For example, instead of doing:</p>
-
-<pre><code class="r">library(&quot;datasets&quot;)
+<p>The purpose of this package is to provide worry-free parallel alternatives to base-R “apply” functions, e.g. <code>apply()</code>, <code>lapply()</code>, and <code>vapply()</code>.  The goal is that one should be able to replace any of these in the core with its futurized equivalent and things will just work.  For example, instead of doing:</p>
+<pre><code class="language-r">library(&quot;datasets&quot;)
 library(&quot;stats&quot;)
 y &lt;- lapply(mtcars, FUN = mean, trim = 0.10)
 </code></pre>
-
 <p>one can do:</p>
-
-<pre><code class="r">library(&quot;future.apply&quot;)
+<pre><code class="language-r">library(&quot;future.apply&quot;)
 plan(multisession) ## Run in parallel on local computer
 
 library(&quot;datasets&quot;)
 library(&quot;stats&quot;)
 y &lt;- future_lapply(mtcars, FUN = mean, trim = 0.10)
 </code></pre>
-
 <p>Reproducibility is part of the core design, which means that perfect, parallel random number generation (RNG) is supported regardless of the amount of chunking, type of load balancing, and future backend being used.  <em>To enable parallel RNG, use argument <code>future.seed = TRUE</code>.</em></p>
-
 <h2>Role</h2>
-
 <p>Where does the <a href="https://cran.r-project.org/package=future.apply">future.apply</a> package fit in the software stack?  You can think of it as a sibling to <a href="https://cran.r-project.org/package=foreach">foreach</a>, <a href="https://cran.r-project.org/package=furrr">furrr</a>, <a href="https://bioconductor.org/packages/BiocParallel/">BiocParallel</a>, <a href="https://cran.r-project.org/package=plyr">plyr</a>, etc.  Just as parallel provides <code>parLapply()</code>, foreach provides <code>foreach()</code>, BiocParallel provides <code>bplapply()</code>, and plyr provides <code>llply()</code>, future.apply provides <code>future_lapply()</code>.  Below is a table summarizing this idea:</p>
-
 <table>
 <tr>
 <th>Package</th>
 <th>Functions</th>
 <th>Backends</th>
 </tr>
-
 <tr style="vertical-align: top">
 <td>
 <a href="https://cran.r-project.org/package=future.apply">future.apply</a><br>
 <br>
 </td>
 <td>
-Future-versions of common goto <code>*apply()</code> functions available in base R (of the &lsquo;base&rsquo; package):<br>
+Future-versions of common goto <code>*apply()</code> functions available in base R (of the 'base' package):<br>
 <code>future_apply()</code>, 
 <code>future_by()</code>, 
 <code>future_eapply()</code>, 
@@ -262,20 +252,18 @@ Future-versions of common goto <code>*apply()</code> functions available in base
 All future backends
 </td>
 </tr>
-
 <tr style="vertical-align: top">
 <td>
 parallel
 </td>
 <td>
 <code>mclapply()</code>, <code>mcmapply()</code>,
-<code>clusterMap()</code>, <code>parApply()</code>, <code>parLapply()</code>, <code>parSapply()</code>, &hellip;
+<code>clusterMap()</code>, <code>parApply()</code>, <code>parLapply()</code>, <code>parSapply()</code>, ...
 </td>
 <td>
 Built-in and conditional on operating system</a>
 </td>
 </tr>
-
 <tr style="vertical-align: top">
 <td>
 <a href="https://cran.r-project.org/package=foreach">foreach</a>
@@ -288,7 +276,6 @@ Built-in and conditional on operating system</a>
 All future backends via <a href="https://cran.r-project.org/package=doFuture">doFuture</a>
 </td>
 </tr>
-
 <tr style="vertical-align: top">
 <td>
 <a href="https://cran.r-project.org/package=furrr">furrr</a>
@@ -298,19 +285,18 @@ All future backends via <a href="https://cran.r-project.org/package=doFuture">do
 <code>future_map()</code>,
 <code>future_pmap()</code>,
 <code>future_map2()</code>,
-&hellip;
+...
 </td>
 <td>
 All future backends
 </td>
 </tr>
-
 <tr style="vertical-align: top">
 <td>
 <a href="https://bioconductor.org/packages/release/bioc/html/BiocParallel.html">BiocParallel</a>
 </td>
 <td>
-Bioconductor&rsquo;s parallel mappers:<br>
+Bioconductor's parallel mappers:<br>
 <code>bpaggregate()</code>,
 <code>bpiterate()</code>,
 <code>bplapply()</code>, and
@@ -320,8 +306,6 @@ Bioconductor&rsquo;s parallel mappers:<br>
 All future backends via <a href="https://cran.r-project.org/package=doFuture">doFuture</a> (because it supports foreach) or via <a href="https://github.com/HenrikBengtsson/BiocParallel.FutureParam">BiocParallel.FutureParam</a> (direct BiocParallelParam support; prototype)
 </td>
 </tr>
-
-
 <tr style="vertical-align: top">
 <td>
 <a href="https://cran.r-project.org/package=plyr">plyr</a>
@@ -331,27 +315,27 @@ All future backends via <a href="https://cran.r-project.org/package=doFuture">do
 <code>aaply()</code>,
 <code>ddply()</code>,
 <code>dlply()</code>,
-<code>llply()</code>, &hellip;
+<code>llply()</code>, ...
 </td>
 <td>
 All future backends via <a href="https://cran.r-project.org/package=doFuture">doFuture</a> (because it uses foreach internally)
 </td>
 </tr>
-
 </table>
-
 <p>Note that, except for the built-in parallel package, none of these higher-level APIs implement their own parallel backends, but they rather enhance existing ones.  The foreach framework leverages backends such as <a href="https://cran.r-project.org/package=doParallel">doParallel</a>, <a href="https://cran.r-project.org/package=doMC">doMC</a> and <a href="https://cran.r-project.org/package=doFuture">doFuture</a>, and the future.apply framework leverages the <a href="https://cran.r-project.org/package=future">future</a> ecosystem and therefore backends such as built-in parallel, <a href="https://cran.r-project.org/package=future.callr">future.callr</a>, and <a href="https://cran.r-project.org/package=future.batchtools">future.batchtools</a>.</p>
-
 <p>By separating <code>future_lapply()</code> and friends from the <a href="https://cran.r-project.org/package=future">future</a> package, it helps clarifying the purpose of the future package, which is to define and provide the core Future API, which higher-level parallel APIs can build on and for which any futurized parallel backends can be plugged into.</p>
-
 <h2>Roadmap</h2>
-
 <ol>
-<li><p>Implement <code>future_*apply()</code> versions for all common <code>*apply()</code> functions that exist in base R.  This also involves writing a large set of package tests asserting the correctness and the same behavior as the corresponding <code>*apply()</code> functions.</p></li>
-<li><p>Harmonize all <code>future_*apply()</code> functions with each other, e.g. the future-specific arguments.</p></li>
-<li><p>Consider additional <code>future_*apply()</code> functions and features that fit in this package but don&#39;t necessarily have a corresponding function in base R.  Examples of this may be &ldquo;apply&rdquo; functions that return futures rather than values, mechanisms for benchmarking, and richer control over load balancing.</p></li>
+<li>
+<p>Implement <code>future_*apply()</code> versions for all common <code>*apply()</code> functions that exist in base R.  This also involves writing a large set of package tests asserting the correctness and the same behavior as the corresponding <code>*apply()</code> functions.</p>
+</li>
+<li>
+<p>Harmonize all <code>future_*apply()</code> functions with each other, e.g. the future-specific arguments.</p>
+</li>
+<li>
+<p>Consider additional <code>future_*apply()</code> functions and features that fit in this package but don’t necessarily have a corresponding function in base R.  Examples of this may be “apply” functions that return futures rather than values, mechanisms for benchmarking, and richer control over load balancing.</p>
+</li>
 </ol>
-
 <p>The API and identity of the future.apply package will be kept close to the <code>*apply()</code> functions in base R.  In other words, it will <em>neither</em> keep growing nor be expanded with new, more powerful apply-like functions beyond those core ones in base R.  Such extended functionality should be part of a separate package.</p>
 
 </body>
