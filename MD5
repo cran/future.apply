@@ -1,6 +1,6 @@
-7cedd472c9ee64b7a6086944c8cea59a *DESCRIPTION
+05be1b3166c2173064f4897f0c52fbe7 *DESCRIPTION
 3204e62059c5100b47722db1bf65ae7b *NAMESPACE
-31a55f7f4ba2339cb48250908796490f *NEWS.md
+8fbb57238b523e203fb321d1f17a7044 *NEWS.md
 c49414ae6667bae9d4ab14eb761c4fc8 *R/000.import.R
 9904820e88c929f0315a731ee9c6f2d0 *R/001.bquote.R
 074c87dae3c6bcd67102a62709a3279d *R/chunking.R
@@ -14,9 +14,9 @@ ca52c7049f940fcee037b8c9ca299809 *R/future_eapply.R
 dfdc4991860f7789044ed7d993de6984 *R/future_mapply.R
 381866b20dd5e68d76ae2c0bdc9eef79 *R/future_replicate.R
 63409fe0af11304897a5443d58d5bf81 *R/future_sapply.R
-27ed2071fb99cbbe2d846af2f778776f *R/future_tapply.R
+163fc13e36d0df337882a6511c4d4896 *R/future_tapply.R
 2d7489d687a703389533607df779dfc5 *R/future_vapply.R
-c4ce56af92f1285df7438781e0ff78ba *R/future_xapply.R
+f5dccf787dc70af232204c63e1ab2c5b *R/future_xapply.R
 49c203c0e67c9bdac344900138526a90 *R/globals.R
 dca25c3ec6daa6a23599275cb7c7ab80 *R/makeChunks.R
 e1062136dfe9657a933bdee2de386a13 *R/make_rng_seeds.R
@@ -25,10 +25,10 @@ e1062136dfe9657a933bdee2de386a13 *R/make_rng_seeds.R
 803b446897dc95401f17ad56de402fe5 *R/utils,conditions.R
 f12762ad22e3c917496b1cb64bf067ab *R/utils.R
 aa1a17de57d825edff916c2e3c28fe49 *R/zzz.R
-c904161c837cd18259bc007b3f5bd9cc *build/vignette.rds
+a13aa30e140cf0393531c989852c8d6c *build/vignette.rds
 e95c71b9cdbeaaa9724b59704dfc3c5a *inst/CITATION
 af1c13b0740dd812099d881c07c05b49 *inst/WORDLIST
-48f6dd773044c9249ce42edf4d59e9cf *inst/doc/future.apply-1-overview.html
+235ce025826510de32daa24411939bd1 *inst/doc/future.apply-1-overview.html
 078c6ea941f59405aea368dde6dac02c *inst/doc/future.apply-1-overview.md.rsp
 823b12da71976538c0523b3cfa2b10aa *man/fold.Rd
 6f7cefcaa1f49913d94659166b46e570 *man/future.apply.Rd
@@ -45,7 +45,7 @@ e8b67c6887974b097efc7c2a984168a9 *tests/future_eapply.R
 6368c0b7cf1c330162596a0962c13f33 *tests/future_lapply,RNG.R
 06479eb048e09d1534f39adace9a1ca8 *tests/future_lapply,globals.R
 1dac9ea1fdd915dfa1f97fc6f639fe0e *tests/future_lapply.R
-334c7b0b165e54e0506fd6fcf49427fe *tests/future_mapply,globals.R
+45a80f446c0b56a1eac9e42f968dd3b0 *tests/future_mapply,globals.R
 8876f5fb3416f0f46befc6a565513da6 *tests/future_mapply.R
 8a0e88bd5caff070ee6023064ec3a85b *tests/future_replicate.R
 522a96302230581294c477604875e866 *tests/future_sapply.R
@@ -55,6 +55,7 @@ befa096c99ef36f2194b7bd036565a46 *tests/globals,tricky_recursive.R
 a3c72397ccaa206761228e5b3cfed764 *tests/incl/end.R
 ba39840f9bfc78f98c4c0ce7b2d1b64e *tests/incl/start,load-only.R
 0d757150beb30ecef6a18a539d432264 *tests/incl/start.R
+4b327da2738b89f94d0d38489ec964c8 *tests/options,nested.R
 624d529ce40fe807b727f0ed9381a269 *tests/rng.R
 8e965cdaf251ea7356ac701d421eb292 *tests/stdout.R
 12395d516dfae147fb8957b3d0b4c15f *tests/utils.R
