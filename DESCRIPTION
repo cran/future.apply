@@ -1,9 +1,9 @@
 Package: future.apply
-Version: 1.11.3
+Version: 1.20.0
 Title: Apply Function to Elements in Parallel using Futures
-Depends: R (>= 3.2.0), future (>= 1.28.0)
-Imports: globals (>= 0.16.1), parallel, utils
-Suggests: datasets, stats, tools, listenv (>= 0.8.0), R.rsp, markdown
+Depends: R (>= 3.2.0), future (>= 1.49.0)
+Imports: globals, parallel, utils
+Suggests: datasets, stats, tools, listenv, R.rsp, markdown
 VignetteBuilder: R.rsp
 Authors@R: c(person("Henrik", "Bengtsson",
                     role = c("aut", "cre", "cph"),
@@ -16,12 +16,14 @@ LazyLoad: TRUE
 URL: https://future.apply.futureverse.org,
         https://github.com/futureverse/future.apply
 BugReports: https://github.com/futureverse/future.apply/issues
+Language: en-US
+Encoding: UTF-8
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-10-27 17:30:11 UTC; henrik
-Author: Henrik Bengtsson [aut, cre, cph]
-    (<https://orcid.org/0000-0002-7579-5165>),
+Packaged: 2025-06-06 06:39:06 UTC; henrik
+Author: Henrik Bengtsson [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0002-7579-5165>),
   R Core Team [cph, ctb]
 Maintainer: Henrik Bengtsson <henrikb@braju.com>
 Repository: CRAN
-Date/Publication: 2024-10-27 18:50:02 UTC
+Date/Publication: 2025-06-06 08:00:02 UTC
