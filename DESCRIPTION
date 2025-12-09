@@ -1,5 +1,5 @@
 Package: future.apply
-Version: 1.20.0
+Version: 1.20.1
 Title: Apply Function to Elements in Parallel using Futures
 Depends: R (>= 3.2.0), future (>= 1.49.0)
 Imports: globals, parallel, utils
@@ -18,12 +18,12 @@ URL: https://future.apply.futureverse.org,
 BugReports: https://github.com/futureverse/future.apply/issues
 Language: en-US
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2025-06-06 06:39:06 UTC; henrik
+Packaged: 2025-12-09 05:24:32 UTC; hb
 Author: Henrik Bengtsson [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0002-7579-5165>),
   R Core Team [cph, ctb]
 Maintainer: Henrik Bengtsson <henrikb@braju.com>
 Repository: CRAN
-Date/Publication: 2025-06-06 08:00:02 UTC
+Date/Publication: 2025-12-09 07:50:07 UTC
